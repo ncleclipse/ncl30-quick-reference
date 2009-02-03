@@ -31,8 +31,9 @@ public class NCLHelper {
 	 * @return description - a descrição de help do atributo especifico
 	 */
 	public String getHelpDescription(String element, String attribute){
-		String description = null;
+		String description = "";
 		Map<String,String> attMap;
+		if(helpMap == null) return description;
 		attMap = helpMap.get(element);
 		if (attMap != null){
 			description = attMap.get(attribute);
@@ -48,8 +49,9 @@ public class NCLHelper {
 	 */
 	public static String getHelpDescription(String element){
 		String attribute = "self";
-		String description = null;
+		String description = "";
 		Map<String,String> attMap;
+		if(helpMap == null) return description;
 		attMap = helpMap.get(element);
 		if (attMap != null){
 			description = attMap.get(attribute);
