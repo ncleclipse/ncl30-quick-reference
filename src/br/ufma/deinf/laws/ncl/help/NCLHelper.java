@@ -75,8 +75,8 @@ public class NCLHelper {
 	}
 
 	/**
-	 * Pega uma descrição de help para um elemento especifico, retorna NULL
-	 * caso não consiga encontrar nenhuma descrição para este elemento
+	 * Pega uma descrição de help para um elemento especifico, retorna NULL caso
+	 * não consiga encontrar nenhuma descrição para este elemento
 	 * 
 	 * @param element
 	 *            - o elemento a ser procurado
