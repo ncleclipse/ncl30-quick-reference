@@ -75,9 +75,9 @@ public class NCLHelperFactory {
 		while (st.hasMoreTokens()) {
 			/* pega o elemento atributo e sua descrição */
 			element = st.nextToken().trim();
-			System.out.println(element);
+			//System.out.println(element);
 			attribute = st.nextToken().trim();
-			System.out.println(attribute);
+			//System.out.println(attribute);
 			description = st.nextToken().trim();
 			/* tenta pegar o Map correspondente a esse elemento */
 			descriptionMap = help.get(element);
