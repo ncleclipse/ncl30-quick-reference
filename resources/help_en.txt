@@ -180,229 +180,214 @@ Provide the accent color and can receive the names:
 “olive”, “blue”, “navy”, “aqua”, or “teal” |
 
 descriptor | focusBorderWidth | 
-Define a largura em pixels da borda em destaque
-(0 significa que nenhuma borda aparece, valores positivos 
-significam que a borda está fora do conteúdo do objeto e 
-valores negativos significam que a borda 
-é desenhada sobre o conteúdo do objeto) |
+Sets the pixel width of the border in focus (0 means 
+no border appears, positive values means that the 
+border is out of the contents of the object and negative
+values mean that the border is drawn on the content
+of the object) |
 
 descriptor | focusBorderTransparency | 
-Define a transparência da cor de destaque. 
-Deve obrigatoriamente ser um valor real entre 0 e 1, 
-ou um valor real na faixa [0,100] 
-terminando com o caractere “%” (por exemplo, 30 %), 
-com “1” ou “100 %” significando 
-transparência total e “0” ou “0 %” 
-significando nenhuma transparência |
+Sets the transparency of the highlight color. Necessarily
+be a real value between 0 and 1, or a real value in
+the range [0.100] ending with the character "%" (for 
+example, 30%), with "1" or "100%" meaning full
+transparency and "0" or "0%" meaning no transparency. |
 
 descriptor | focusSrc | 
-Especifica um conteúdo alternativo a ser apresentado, 
-ao invés do conteúdo da apresentação atual, 
-se um elemento receber o foco. 
-Esse atributo segue as mesmas regras do 
-atributo src do elemento <media> |
+Specifies alternative content to be displayed,
+rather than the content of the current presentation,
+if an element receive the focus. This attribute follows
+the same rules of src attribute of the element
+<media> |
 
-descriptor | selBorderColor | 
-Especifica uma cor de borda, quando selecionada, 
-a caixa definida pelos atributos de posicionamento de elemento |
+descriptor | selBorderColor |
+Specifies a border color, when selected, the box
+defined by the attributes of element positioning. |
 
 descriptor | focusSelSrc | 
-Especifica um conteúdo de mídia alternativo 
-a ser apresentado, quando um elemento em foco 
-é selecionado pressionando a tecla de ativação. 
-Este atributo segue as mesmas regras do 
-atributo src do elemento <media> |
+Specifies an alternate media content to be displayed
+when an element in focus is selected by pressing
+the activation key. This attribute follows the same
+rules of src attribute of the element <media> |
 
 descriptor | transIn | 
-Referência uma transição que deverá iniciar 
-no começo da duração ativa dos elementos de mídia 
-(quando a apresentação do objeto inicia). 
-É uma lista separada por ponto e vírgula 
-dos identificadores de transição. 
-Cada um dos identificadores deve obrigatoriamente 
-corresponder ao valor do identificador XML 
-de um dos elementos de transição anteriormente 
-definidos no elemento <transitionBase>. 
-O objetivo da lista separada por ponto e vírgula 
-é permitir que os autores especifiquem um conjunto 
-de transições alternativas (fallback) 
-se a transição preferida não estiver disponível |
+Reference a transition that will start the beginning
+of the active duration of the media elements (when
+the presentation of the object starts). Is a list
+separated by semicolons of the identifiers of transitions.
+Each of the identifiers must necessarily match the
+value of the XML identifier of one the transition elements
+previously defined by element <transitionBase>. The
+purpose of this list separated by semicolons is allows
+authors to specify a set of alternative transitions
+(fallback) if the preferred transition is not available. |
 
-descriptor | transOut | 
-Referência uma transição que deverá iniciar no final 
-da duração ativa dos elementos de mídia 
-(quando a apresentação do objeto transita do 
-estado ocorrendo para preparado). 
-É uma lista separada por ponto e vírgula 
-dos identificadores de transição. 
-Cada um dos identificadores deve obrigatoriamente 
-corresponder ao valor do identificador XML 
-de um dos elementos de transição anteriormente 
-definidos no elemento <transitionBase>. 
-O objetivo da lista separada por ponto e vírgula 
-é permitir que os autores especifiquem um conjunto 
-de transições alternativas (fallback) 
-se a transição preferida não estiver disponível |
+descriptor | transOut |
+Reference a transition that will start at the end
+of the active duration of the media elements (when
+the presentation of the object starts). Is a list
+separated by semicolons of the identifiers of transitions.
+Each of the identifiers must necessarily match the
+value of the XML identifier of one the transition elements
+previously defined by element <transitionBase>. The
+purpose of this list separated by semicolons is allows
+authors to specify a set of alternative transitions
+(fallback) if the preferred transition is not available. | 
 
 descriptorParam | self | 
-São utilizados para parametrizar o controle 
-da apresentação do objeto associado com 
-o elemento descritor. 
-Esses parâmetros podem, por exemplo, 
-redefinir alguns valores de atributos 
-definidos pelos atributos da região |
+They are utilized to parameterize the control presentation
+of the object associated with the element descriptor.
+These parameters can, for example, redefine some attribute
+values defined by the attributes of the region |
 
-descriptorParam | name | 
-Indica o nome do parâmetro/atributo |
+descriptorParam | name |
+Indicates the name of parameter/attribute | 
 
-descriptorParam | value | 
-Especifica um valor inicial para o 
-parâmetro/atributo definido |
+descriptorParam | value |
+Specifies an initial value for the
+parameter/value defined | 
 
-descriptorSwitch | self | 
-Contém um conjunto de descritores alternativos a 
-ser associado a um objeto. 
-A escolha de <descriptorSwitch> é feita em tempo 
-de apresentação, utilizando regras de 
-teste previamente definidas |
+descriptorSwitch | self |
+Contains a set of alternative descriptor to
+be associated with an object. The choise of
+<descriptorSwitch> is done in time presentation,
+using test rules previously defined. |
 
 descriptorSwitch | id | 
-Identifica univocamente o elemento dentro do documento NCL. 
-Seu valor é um identificador XML |
+Uniquely identifies the element within the NCL document
+Its value is an XML identifier. |
 
 defaultDescriptor | self | 
-Identifica o elemento (default) que deve obrigatoriamente 
-ser selecionado se nenhuma das regras bindRule for 
-avaliada como verdadeira |
+Identifies the element (default) which must 
+necessarily be selected if none of the rules 
+bindRule is true. |   
 
-defaultDescriptor | descriptor | 
-Referencia um <descriptor> default, 
-filhos de <descriptorSwitch>, 
-se nenhuma das regras bindRule for 
-avaliada como verdadeira |
+defaultDescriptor | descriptor |
+Reference a default <descriptor>, children
+of <descriptorSwitch>, if none of rules
+bindRule is true. |
 
 ruleBase | self | 
-Permite a definição de regras que, quando satisfeitas, 
-selecionam alternativas para a apresentação do documento 
-e deve obrigatoriamente ser definido como elemento-filho 
-do elemento <head> |
+Allows the definition of rules that, when
+met, select alternatives for presenting the
+document and must necessarily be defined as
+child element of the element <head>. |
 
 ruleBase | id | 
-Identifica univocamente o elemento dentro do documento NCL. 
-Seu valor é um identificador XML |
+Uniquely identifier the element within a NCL document.
+Its value is an XML identifier. |
 
 rule | self | 
-Definem regras simples, ou seja, 
-que comparam apenas um valor com uma variável |
+Difine simple rules, in the other words, only comparing
+one value with a variable. |
 
-rule | id |  
-Identifica univocamente o elemento dentro do documento NCL. 
-Seu valor é um identificador XML |
+rule | id |
+Uniquely identifier the element within a NCL document.
+Its value is an XML identifier. |
 
 rule | var | 
-Uma variável que deve obrigatoriamente ser 
-uma propriedade do nó settings 
-(elemento <media> do tipo application/x-ginga-settings), 
-ou seja, o atributo var deve obrigatoriamente possuir 
-o mesmo valor do atributo name de um elemento <property>, 
-definido como filho do elemento <media> 
-do tipo application/x-ginga-settings |
+A variable which must be necessarily a property of the
+node settings (<media> element of type application/x-ginga-settings),
+in the other words, the var attribute must necessarily
+possess the same value of the name attribute of a <property>
+element, definded as child of <media> element of type
+application/x-ginga-settings. |
 
 rule | comparator | 
-Um comparador (eq,ne,gt,ge,lt,le) que relaciona 
-a variável definida por var com 
-um valor definido por value. | 
+A comparator (eq, ne, gt, ge, lt, le) that relates
+the variable defined by var with a value set for
+value. |
 
 compositeRule | self | 
-Definem regras compostas, ou seja, 
-composições de regras simples |
+Define composite rules, in the other words,
+compositions of simple rules. |
 
 compositeRule | id | 
-Identifica univocamente o elemento dentro do documento NCL. 
-Seu valor é um identificador XML |
+Uniquely identifier the element within a NCL document.
+Its value is an XML identifier. |
 
 compositeRule | operator | 
-Define como suas regras-filhas serão relacionadas. 
-Este atributo pode ter os valores "or" e "and". |
+Define how their child rules will be related.
+This attribute can have values "or" and "and". |
 
 bindRule | self | 
-Utilizado para associar regras com componentes 
-de um elemento <switch> ou <descriptorSwitch>. |
+Used to associate rules with components of a
+<switch> or <descriptorSwitch> element. |
 
 bindRule | constituent | 
-Referência um componente filho do <swicth> 
-ou <descriptorSwitch> ao qual este pertence |
+Refer a child component of <switch> or <descriptorSwitch>
+to which it belongs. |
 
 bindRule | rule | 
-Referência uma das regras filhas do elemento <bindRule>, 
-seja esta regras simples ou composta |
+Reference one of children rules of the <bindRule> element,
+be it simple or compound rules. |
 
 importBase | self | 
-Permitir que uma base de entidades seja incorporada
- a outra base já existente |
+Allows a base of entities be corporate to 
+other existing base. |
 
 importBase | documentURI | 
-Refere-se a um URI correspondente ao documento NCL
- contendo a base a ser importada |
+Refers to a URI corresponding to the NCL document 
+containing the base to be imported. |
 
 importBase | alias | 
-Especifica um nome a ser utilizado como prefixo quando 
-for necessário referir-se a elementos dessa base importada. 
-O nome do atributo alias deve obrigatoriamente ser único 
-em um documento e seu escopo é restrito 
-ao documento que o definiu. 
-A referência teria o formato: alias#element_id. 
-A operação de importação é transitiva, ou seja, 
-se a baseA importa a baseB que importa a baseC, 
-então a baseA importa a baseC.
- Entretanto, o alias definido para a baseC dentro da baseB 
-obrigatoriamente não deve ser considerado pela baseA |
+Specifies a name to be used as a prefix when necessary
+to refer to elements of this imported base. The name of
+the alias attribute must necessarily be unique within
+a document and its scope is restricted to the document
+that defined it.
+The reference would have the format: # alias element_id.
+The import operation is transitive, in other words,
+if the baseA imports the baseB, which imports the baseC,
+so the baseA imports the baseC. However, the alias defined
+to baseC within baseB must not be considered by baseA. | 
 
-importedDocumentBase | self | 
-Especifica um conjunto de documentos NCL importados 
-e deve obrigatoriamente ser definido como 
-elemento-filho do elemento <head> |
+importedDocumentBase | self |
+Specifies a set of NCL documents imported and must
+necessarily to be defined as child element of <head> element. |
 
-importedDocumentBase | id | 
-Identifica univocamente o elemento dentro do documento NCL. 
-Seu valor é um identificador XML |
+importedDocumentBase | id |
+Uniquely identifier the element within a NCL document.
+Its value is an XML identifier. |
 
 importNCL | self | 
-Utilizado para importar um documento NCL. 
-Todas as bases definidas dentro de um documento NCL, 
-bem como o elemento <body> do documento, são importados 
-todos de uma vez, através do elemento <importNCL>. 
-As bases são tratadas como se cada uma tivesse 
-sido importada por um elemento <importBase>. 
-O elemento <body> importado será tratado como um elemento <context>. 
-O elemento <importNCL> não “inclui” o documento NCL referido, 
-mas apenas torna o documento referenciado visível 
-para que os seus componentes possam ser reusados pelo documento 
-que definiu o elemento <importNCL>. Assim, o <body> importado, 
-bem como quaisquer de seus nós, pode ser reusado dentro 
-do elemento <body> do documento NCL que realizou a importação. 
-A operação do elemento <importNCL> também tem propriedade transitiva,
- ou seja, se o documentoA importar o documentoB que importa documentoC, 
-então o documentoA importa o documentoC. 
-Entretanto, o alias definido para o documentoC dentro do documentoB 
-obrigatoriamente não deve ser considerado pelo documentoA |
+Used to import a NCL document. All the bases
+defined within a NCL document, as all the
+element <body> of document, are imported
+all at once, through the element <importNCL>.
+The bases are treated as if each one had been
+imported by an element <importBase>. The <body> 
+element imported will be treated as an element
+<context>. The <importBase> element doesn't 
+"include" the NCL document refered, but only
+makes visible the referenced document so that
+their components can be reused by the documents
+that defined the element <imporNCL>. Thus, the 
+<body> imported, and any of its nodes can be 
+reused within of <body> element of the NCL
+document that has done the import. The operation
+of <importNCL> element also has the transitive
+property, in other words, if the documentA imports
+the documentB, which imports the documentC, so
+the documentA also imports the documentC. However,
+the alias defined to documentC within the documentB
+must not be considered by documentA. |
 
-importNCL | documentURI | 
-Refere-se a um URI correspondente ao 
-documento a ser importado |
+importNCL | documentURI |
+Refers to a URI corresponding to document
+to be imported. |
 
 importNCL | alias | 
-Especifica um nome a ser utilizado quando 
-for realizada uma referência a elementos 
-desse documento importado. 
-Como no elemento <importBase>, o nome deve 
-obrigatoriamente ser único (type=ID) e seu escopo 
-é restrito ao documento que definiu o atributo alias. 
-A referência teria o formato: alias#element_id. 
-É importante notar que o mesmo alias convém ser 
-utilizado quando é necessário referir-se a elementos 
-definidos nas bases do documento importado 
-(<regionBase>, <connectorBase>, <descriptorBase> etc) |
+Specifies a name to be used when is realized
+a reference to elements in this imported
+document. As in <importBase> element, the name
+must be unique (type=ID) and its scope is
+restricted to the document that defined the
+alias attribute. The reference would have the
+format: alias#element_id. Importantly, the same
+alias should be used when it is necessary to refer
+to elements defined on the bases of the imported
+document (<regionBase>, <connectorBase>, <descriptorBase, etc) |
 
 transitionBase | self | 
 Especifica um conjunto de efeitos de transição e 
